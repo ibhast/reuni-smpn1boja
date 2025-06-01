@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Undangan Reuni SMPN 1 Boja 2002</title>
+  <link rel="icon" type="image/png" href="logo.png">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -22,11 +23,6 @@
       text-align: center;
       color: #2c3e50;
     }
-    .logo {
-      display: block;
-      margin: 20px auto;
-      max-width: 120px;
-    }
     .highlight {
       background-color: #ffecb3;
       padding: 10px;
@@ -42,11 +38,23 @@
       border-left: 4px solid #0288d1;
       border-radius: 8px;
     }
-    .map iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
+    .map {
       margin-top: 10px;
+    }
+    .map-responsive {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .map-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
     footer {
       text-align: center;
@@ -66,11 +74,16 @@
     ul {
       padding-left: 20px;
     }
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="logo.png" alt="Logo Reuni SMPN 1 Boja" class="logo">
+    <img src="logo.png" alt="Logo Reuni" class="logo">
     <h1>🎉 UNDANGAN REUNI 🎉</h1>
     <h2>SMP NEGERI 1 BOJA ANGKATAN 2002</h2>
     <p style="text-align:center"><em>"Selamanya Akan Menjadi Saudara"</em></p>
@@ -111,8 +124,8 @@
 
     <div class="section">
       <h3>📍 LOKASI ACARA</h3>
-      <div class="map">
-        <iframe src="https://maps.google.com/maps?q=-7.065078282373649,110.25479459589265&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
+      <div class="map map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.4701774140354!2d110.2546783!3d-7.0652119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7063168981816f%3A0xdbfd986a48d47801!2sDesa%20Wisata%20Trayu!5e0!3m2!1sen!2sid!4v1748793468953!5m2!1sen!2sid" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
 
