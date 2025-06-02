@@ -118,6 +118,17 @@
       color: #d84315;
       margin-bottom: 30px;
     }
+    .rundown {
+      list-style: none;
+      padding-left: 0;
+    }
+    .rundown li {
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      background-color: #FFF9C4;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
     .progress-container {
       background: #ddd;
       border-radius: 10px;
@@ -138,6 +149,32 @@
       margin-bottom: 60px;
       font-style: italic;
       color: #777;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 16px;
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    #backToTop:hover {
+      background-color: #0277bd;
+    }
+    .closing-note {
+      background-color: #FFFDE7;
+      border-left: 4px solid #FFD600;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 30px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -177,6 +214,25 @@
       </div>
     </div>
 
+    <div class="section">
+      <h3>📋 RUNDOWN REUNI – VIBES ANAK 2002 BANGET!</h3>
+      <ul class="rundown">
+      <li><strong>07.30 – 08.00:</strong> 📥 Datang, Absen, & Ambil Kaos – Langsung cus ke meja registrasi, ambil kaos kece kamu, dan siapkan senyum termanis!</li>
+      <li><strong>08.00 – 08.15:</strong> 🎤 Acara Dibuka! – MC ganteng & cantik siap ngemong kita semua~</li>
+      <li><strong>08.15 – 08.20:</strong> 🙏 Doa Bareng – Biar acara kita adem, lancar, dan penuh berkah!</li>
+      <li><strong>08.20 – 08.35:</strong> 🧠 Sambutan Ketua Panitia – Dengerin curhatan Pak Ketua yang akhirnya reuni ini kejadian juga 😁</li>
+      <li><strong>08.35 – 09.05:</strong> 💭 Sesi Nostalgia & Cerita Seru – Testimoni, cerita random, dan kenangan zaman masih polos. Siapin tisu (buat ngakak).</li>
+      <li><strong>09.05 – 09.30:</strong> 🔍 Ice Breaking: Tebak Siapa Aku? – Coba tebak wajah-wajah jadul yang udah upgrade!</li>
+      <li><strong>09.30 – 09.50:</strong> 🎯 Game Rebutan Bangku – Yang kalah jangan baper ya, ini cuma game wkwkwk</li>
+      <li><strong>09.50 – 10.00:</strong> 📸 Foto Bareng All Star – Pose dulu yuk, buat kenangan & stok feed Instagram</li>
+      <li><strong>10.00 – 10.20:</strong> 🎁 Doorprize Time! – Siapa yang paling hoki? Siap-siap deg-degan!</li>
+      <li><strong>10.20 – 11.30:</strong> 🍱 Makan Siang + Ngobrol Bebas – Sambil disuguhin live music. Ngemil sambil gosipin mantan 😜</li>
+      <li><strong>11.30 – 12.00:</strong> 🎤 Karaoke Session – Bawain lagu tahun 2000-an yang bikin kita flashback berat!</li>
+      <li><strong>12.00 – 12.30:</strong> 🤗 Peluk-peluk & Pamit – Salaman, cipika-cipiki, dan janji gak lost contact lagi!</li>
+      </ul>
+    </div>
+
+    
     <div class="section">
       <h3>📌 INFO PENTING BANGET NIH!</h3>
       <ul>
@@ -241,13 +297,22 @@
         Makasih banyak Sob! ❤️</p>
     </div>
 
+    <div class="section closing-note">
+      <h3>📣 JANGAN CUMA DISCREENSHOT!</h3>
+      <p>Dateng langsung dong bestiee! Kita udah siapin semuanya buat kamu.  
+     Tinggal dateng, senyum, dan peluk temen lama 💖  
+     Biar kenangan ini gak cuma lewat layar!</p>
+    </div>
+    
     <footer>
       Karena Reuni bukan sekedar bertemu, tapi merayakan persaudaraan yang tak lekang oleh waktu!<br>
       Wassalamu’alaikum Warahmatullahi Wabarakatuh.<br><br>
       Ketua Panitia – <strong>Fatkhur Rohman</strong>
     </footer>
   </div>
-
+  
+  <button onclick="scrollToTop()" id="backToTop" title="Kembali ke Atas">⬆️</button>
+  
   <script>
     // Countdown
     const countdown = document.getElementById('countdown');
@@ -286,6 +351,14 @@
       const progress = Math.min(((now - new Date('2025-06-01T00:00:00+07:00').getTime()) / total) * 100, 100);
       progressBar.style.width = progress.toFixed(2) + '%';
     }, 1000);
-  </script>
+  
+    window.onscroll = function() {
+    document.getElementById("backToTop").style.display =
+    (document.documentElement.scrollTop > 300) ? "block" : "none";
+    };
+    function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>    
 </body>
 </html>
