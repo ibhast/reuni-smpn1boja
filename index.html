@@ -9,7 +9,7 @@
    <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: linear-gradient(to bottom, #fffaf3, #ffecb3);
+      background: linear-gradient(to bottom, #fffaf3, #ffecb3);
       color: #333;
       line-height: 1.6;
       margin: 0;
@@ -29,12 +29,13 @@
     .container {
       max-width: 960px;
       margin: auto;
-      margin-top: 100px;
+      margin-top: 100px auto;
       padding: 20px 24px;
     }
      @media (min-width: 768px) {
     .container {
       padding: 20px 40px; /* padding lebih lebar untuk layar besar */
+      }
     }
     h1, h2, h3 {
       text-align: center;
@@ -104,15 +105,16 @@
     }
     .logo {
       text-align: center;
-      margin-top: 100px;
+      padding-top: 80px;
       margin-bottom: 20px;
     }
     .logo img {
+      max-width: 100%;
       width: auto;
-      max-width: 80vw; /* Maksimum 80% lebar layar */
       height: auto;
       display: block;
       margin: 0 auto;
+      object-fit: contain;
     }
     @media (max-width: 600px) {
       .logo img {
@@ -333,7 +335,6 @@
       if (distance < 0) {
         countdown.innerHTML = "🎊 Waktunya REUNI! 🎊";
         countdown.style.color = "#4CAF50";
-        return;
         confetti({
           particleCount: 150,
           spread: 80,
