@@ -8,7 +8,6 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #fdf6e3;
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
       color: #333;
       line-height: 1.6;
       margin: 0;
@@ -59,6 +58,11 @@
       border-radius: 8px;
       font-weight: bold;
       margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #0277bd;
+      transform: scale(1.05);
     }
     .wa-buttons {
       display: flex;
@@ -80,43 +84,43 @@
       max-width: 150px;
       height: auto;
     }
-    .countdown {
+    .countdown-wrapper {
       text-align: center;
+      margin-bottom: 20px;
+    }
+    .countdown-label {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #5d4037;
+      margin-bottom: 5px;
+    }
+    .countdown {
       font-size: 1.5em;
       font-weight: bold;
       color: #d84315;
-      margin-bottom: 10px;
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease-out forwards;
+    .calendar-button {
+      display: block;
+      width: fit-content;
+      margin: 10px auto 0;
+      background-color: #43a047;
     }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .calendar-button:hover {
+      background-color: #388e3c;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="logo fade-in">
+    <div class="logo">
       <img src="logo.png" alt="Logo Reuni SMPN 1 Boja">
     </div>
 
-    <h1 class="fade-in">🎉 UNDANGAN REUNI 🎉</h1>
-    <h2 class="fade-in">SMP NEGERI 1 BOJA ANGKATAN 2002</h2>
-    <p class="fade-in" style="text-align:center"><em>"Selamanya Akan Menjadi Saudara"</em></p>
+    <h1>🎉 UNDANGAN REUNI 🎉</h1>
+    <h2>SMP NEGERI 1 BOJA ANGKATAN 2002</h2>
+    <p style="text-align:center"><em>"Selamanya Akan Menjadi Saudara"</em></p>
 
-    <div style="text-align: center;" class="fade-in">
-      <a class="button" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Reuni%20SMPN%201%20Boja%202002&dates=20250706T010000Z/20250706T050000Z&details=Reuni%20Akbar%20Alumni%20SMPN%201%20Boja%202002%20di%20Desa%20Wisata%20Trayu.%20Datang%20ya!&location=Desa%20Wisata%20Trayu%2C%20Kendal&sf=true&output=xml" target="_blank">
-        📅 Simpan ke Kalender
-      </a>
-    </div>
-
-    <div class="section fade-in">
+    <div class="section">
       <p>Assalamu’alaikum Warahmatullahi Wabarakatuh,<br>
       Salam sejahtera untuk kita semua,</p>
       <p>Dengan penuh rasa syukur dan semangat kebersamaan, kami mengundang seluruh alumni SMP Negeri 1 Boja Angkatan 2002 untuk hadir dalam acara <strong>REUNI ALUMNI</strong> yang akan dilaksanakan pada:</p>
@@ -127,10 +131,15 @@
           <li><strong>Tempat:</strong> "Desa Wisata Trayu", Desa Trayu, Kec. Singorojo, Kab. Kendal, Jawa Tengah</li>
         </ul>
       </div>
-      <div class="countdown" id="countdown">⏳ Countdown menuju hari H...</div>
+
+      <div class="countdown-wrapper">
+        <div class="countdown-label">⏳ Waktu menuju acara reuni:</div>
+        <div class="countdown" id="countdown"></div>
+        <a class="button calendar-button" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20250706T010000Z%0ADTEND:20250706T040000Z%0ASUMMARY:Reuni%20SMPN%201%20Boja%202002%0ALOCATION:Desa%20Wisata%20Trayu,%20Kendal,%20Jawa%20Tengah%0ADESCRIPTION:Reuni%20Akbar%20Alumni%20SMPN%201%20Boja%202002%20-%20Datang%20dan%20bernostalgia%20bersama!%0AEND:VEVENT%0AEND:VCALENDAR" download="Reuni_SMPN1Boja_2025.ics">➕ Simpan ke Kalender</a>
+      </div>
     </div>
 
-    <div class="section fade-in">
+    <div class="section">
       <h3>💡 INFORMASI PENTING</h3>
       <ul>
         <li>Setiap alumni yang hadir dikenakan iuran sebesar <strong>Rp50.000</strong>.</li>
@@ -142,7 +151,7 @@
       </ul>
     </div>
 
-    <div class="section contact fade-in">
+    <div class="section contact">
       <h3>📞 KONTAK PANITIA</h3>
       <p>Konfirmasi kehadiran & pembayaran kaos paling lambat <strong>25 Juni 2025</strong>, bisa langsung hubungi:</p>
       <ul>
@@ -157,20 +166,20 @@
       </div>
     </div>
 
-    <div class="section fade-in">
+    <div class="section">
       <h3>📍 LOKASI ACARA</h3>
       <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.4701774140354!2d110.2546783!3d-7.0652119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7063168981816f%3A0xdbfd986a48d47801!2sDesa%20Wisata%20Trayu!5e0!3m2!1sen!2sid!4v1748793468953!5m2!1sen!2sid" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
 
-    <div class="section fade-in">
+    <div class="section">
       <h3>📋 RSVP KEHADIRAN</h3>
       <p>Isi formulir kehadiran langsung di bawah ini:</p>
       <iframe src="https://s.id/xsmpn1boja" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
     </div>
 
-    <div class="section payment fade-in">
+    <div class="section payment">
       <h3>💳 PEMBAYARAN</h3>
       <p>Transfer iuran bisa dilakukan ke salah satu rekening panitia berikut:</p>
       <ul>
@@ -186,7 +195,7 @@
       <p>Jangan lupa kirim bukti transfer ke Bu Wandha atau Bu Fella, ya!</p>
     </div>
 
-    <footer class="fade-in">
+    <footer>
       Karena reuni bukan sekadar bertemu, tapi merayakan persaudaraan yang tak lekang oleh waktu.<br>
       Wassalamu’alaikum Warahmatullahi Wabarakatuh.<br><br>
       Ketua Panitia – <strong>Fatkhur Rohman</strong>
@@ -201,7 +210,7 @@
       const distance = eventDate - now;
 
       if (distance < 0) {
-        countdown.innerHTML = "🎉 Acara telah dimulai!";
+        countdown.innerHTML = "Acara telah dimulai!";
         return;
       }
 
@@ -210,7 +219,7 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdown.innerHTML = `⏳ Countdown ke acara: ${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+      countdown.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
     }, 1000);
   </script>
 </body>
