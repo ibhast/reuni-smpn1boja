@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Undangan Reuni SMPN 1 Boja 2002</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fdf6e3;
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
       color: #333;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
@@ -17,6 +16,11 @@
       max-width: 800px;
       margin: auto;
       padding: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     h1, h2, h3 {
       text-align: center;
@@ -30,6 +34,7 @@
     }
     .section {
       margin-bottom: 30px;
+      animation: fadeIn 1s ease-in-out;
     }
     .contact, .payment {
       background-color: #e1f5fe;
@@ -58,11 +63,10 @@
       border-radius: 8px;
       font-weight: bold;
       margin-top: 10px;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease;
     }
     .button:hover {
-      background-color: #0277bd;
-      transform: scale(1.05);
+      background-color: #015a8e;
     }
     .wa-buttons {
       display: flex;
@@ -70,12 +74,8 @@
       gap: 10px;
       margin-top: 10px;
     }
-    ul {
-      padding-left: 20px;
-    }
-    p, li {
-      text-align: justify;
-    }
+    ul { padding-left: 20px; }
+    p, li { text-align: justify; }
     .logo {
       text-align: center;
       margin-bottom: 20px;
@@ -84,36 +84,37 @@
       max-width: 150px;
       height: auto;
     }
-    .countdown-wrapper {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .countdown-label {
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #5d4037;
-      margin-bottom: 5px;
-    }
     .countdown {
+      text-align: center;
       font-size: 1.5em;
       font-weight: bold;
       color: #d84315;
+      margin-bottom: 10px;
     }
-    .calendar-button {
-      display: block;
-      width: fit-content;
-      margin: 10px auto 0;
-      background-color: #43a047;
+    .countdown-label {
+      text-align: center;
+      font-size: 1em;
+      color: #666;
+      margin-bottom: 20px;
     }
-    .calendar-button:hover {
-      background-color: #388e3c;
+    .progress-container {
+      background-color: #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .progress-bar {
+      height: 20px;
+      background-color: #0288d1;
+      width: 0%;
+      transition: width 1s ease-in-out;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="logo">
-      <img src="logo.png" alt="Logo Reuni SMPN 1 Boja">
+      <img src="logo.png" alt="Logo Reuni SMPN 1 Boja" />
     </div>
 
     <h1>🎉 UNDANGAN REUNI 🎉</h1>
@@ -121,8 +122,7 @@
     <p style="text-align:center"><em>"Selamanya Akan Menjadi Saudara"</em></p>
 
     <div class="section">
-      <p>Assalamu’alaikum Warahmatullahi Wabarakatuh,<br>
-      Salam sejahtera untuk kita semua,</p>
+      <p>Assalamu’alaikum Warahmatullahi Wabarakatuh, Salam sejahtera untuk kita semua,</p>
       <p>Dengan penuh rasa syukur dan semangat kebersamaan, kami mengundang seluruh alumni SMP Negeri 1 Boja Angkatan 2002 untuk hadir dalam acara <strong>REUNI ALUMNI</strong> yang akan dilaksanakan pada:</p>
       <div class="highlight">
         <ul>
@@ -131,29 +131,30 @@
           <li><strong>Tempat:</strong> "Desa Wisata Trayu", Desa Trayu, Kec. Singorojo, Kab. Kendal, Jawa Tengah</li>
         </ul>
       </div>
-
-      <div class="countdown-wrapper">
-        <div class="countdown-label">⏳ Waktu menuju acara reuni:</div>
-        <div class="countdown" id="countdown"></div>
-        <a class="button calendar-button" href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20250706T010000Z%0ADTEND:20250706T040000Z%0ASUMMARY:Reuni%20SMPN%201%20Boja%202002%0ALOCATION:Desa%20Wisata%20Trayu,%20Kendal,%20Jawa%20Tengah%0ADESCRIPTION:Reuni%20Akbar%20Alumni%20SMPN%201%20Boja%202002%20-%20Datang%20dan%20bernostalgia%20bersama!%0AEND:VEVENT%0AEND:VCALENDAR" download="Reuni_SMPN1Boja_2025.ics">➕ Simpan ke Kalender</a>
+      <div class="countdown" id="countdown"></div>
+      <div class="countdown-label">Waktu menuju acara reuni</div>
+      <div style="text-align: center;">
+        <a class="button" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Reuni+SMPN+1+Boja+2002&details=Reuni+Akbar+SMPN+1+Boja+Angkatan+2002&location=Desa+Wisata+Trayu&dates=20250706T010000Z/20250706T060000Z" target="_blank">Simpan ke Kalender</a>
       </div>
     </div>
 
     <div class="section">
       <h3>💡 INFORMASI PENTING</h3>
       <ul>
-        <li>Setiap alumni yang hadir dikenakan iuran sebesar <strong>Rp50.000</strong>.</li>
-        <li>Kalau bawa pasangan (suami/istri), ada tambahan <strong>Rp50.000 per orang</strong>.</li>
-        <li><strong>Anak-anak bebas biaya alias gratis!</strong></li>
-        <li>Buat yang nggak bisa hadir, tetap ikut iuran ya. Kaos reuni akan kami kirim ke alamat masing-masing.</li>
-        <li>Biaya ongkir ditanggung masing-masing. Silakan japri langsung ke Pak Ketua untuk info lebih lanjut.</li>
-        <li>Pas hari H, semua wajib pakai kaos reuni yang akan dibagikan saat daftar ulang. Biar makin kompak dan kece di foto! 😎</li>
+        <li>Iuran alumni yang hadir: <strong>Rp50.000</strong></li>
+        <li>Tambahan pasangan: <strong>Rp50.000 per orang</strong></li>
+        <li><strong>Anak-anak gratis!</strong></li>
+        <li>Tidak hadir? Iuran tetap + kaos akan dikirim (ongkir ditanggung sendiri)</li>
+        <li>Wajib pakai kaos reuni saat acara</li>
       </ul>
     </div>
 
     <div class="section contact">
       <h3>📞 KONTAK PANITIA</h3>
-      <p>Konfirmasi kehadiran & pembayaran kaos paling lambat <strong>25 Juni 2025</strong>, bisa langsung hubungi:</p>
+      <p>Konfirmasi kehadiran & pembayaran kaos paling lambat <strong>25 Juni 2025</strong>:</p>
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
       <ul>
         <li><strong>Wandha Strianny S</strong> – 0812-2933-7144</li>
         <li><strong>Fella Tetiek</strong> – 0856-4123-2022</li>
@@ -169,30 +170,23 @@
     <div class="section">
       <h3>📍 LOKASI ACARA</h3>
       <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.4701774140354!2d110.2546783!3d-7.0652119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7063168981816f%3A0xdbfd986a48d47801!2sDesa%20Wisata%20Trayu!5e0!3m2!1sen!2sid!4v1748793468953!5m2!1sen!2sid" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.4701774140354!2d110.2546783!3d-7.0652119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7063168981816f%3A0xdbfd986a48d47801!2sDesa%20Wisata%20Trayu!5e0!3m2!1sen!2sid!4v1748793468953!5m2!1sen!2sid" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
 
     <div class="section">
       <h3>📋 RSVP KEHADIRAN</h3>
-      <p>Isi formulir kehadiran langsung di bawah ini:</p>
-      <iframe src="https://s.id/xsmpn1boja" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
+      <iframe src="https://s.id/xsmpn1boja" width="100%" height="900" frameborder="0">Memuat…</iframe>
     </div>
 
     <div class="section payment">
       <h3>💳 PEMBAYARAN</h3>
-      <p>Transfer iuran bisa dilakukan ke salah satu rekening panitia berikut:</p>
+      <p>Transfer iuran ke salah satu rekening berikut:</p>
       <ul>
-        <li><strong>Nama:</strong> Wandha Strianny S<br>
-            <strong>Bank:</strong> Mandiri<br>
-            <strong>No. Rekening:</strong> 1360017928786<br>
-            <strong>Bank:</strong> BRI<br>
-            <strong>No. Rekening:</strong> 003401092761508</li>
-        <li><strong>Nama:</strong> Fella Tetiek<br>
-            <strong>Bank:</strong> BCA<br>
-            <strong>No. Rekening:</strong> 2460924971</li>
+        <li><strong>Wandha Strianny S</strong><br>Mandiri: 1360017928786<br>BRI: 003401092761508</li>
+        <li><strong>Fella Tetiek</strong><br>BCA: 2460924971</li>
       </ul>
-      <p>Jangan lupa kirim bukti transfer ke Bu Wandha atau Bu Fella, ya!</p>
+      <p>Kirim bukti transfer ke Bu Wandha atau Bu Fella.</p>
     </div>
 
     <footer>
@@ -208,19 +202,26 @@
     setInterval(() => {
       const now = new Date().getTime();
       const distance = eventDate - now;
-
       if (distance < 0) {
         countdown.innerHTML = "Acara telah dimulai!";
         return;
       }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdown.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+      countdown.innerHTML = `⏳ ${d} hari ${h} jam ${m} menit ${s} detik`;
     }, 1000);
+
+    // Progress bar logic
+    const progressBar = document.getElementById('progressBar');
+    const deadline = new Date("2025-06-25T23:59:59+07:00").getTime();
+    const start = new Date("2025-06-01T00:00:00+07:00").getTime();
+    const now = new Date().getTime();
+    const total = deadline - start;
+    const passed = now - start;
+    let percent = Math.min(100, Math.max(0, (passed / total) * 100));
+    progressBar.style.width = percent + '%';
   </script>
 </body>
 </html>
