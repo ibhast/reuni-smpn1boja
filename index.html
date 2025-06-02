@@ -142,10 +142,8 @@
         <li>Iuran reuni: <strong>Rp50.000/orang</strong>.</li>
         <li>Kalau ngajak pasangan (suami/istri), tinggal tambah <strong>Rp50.000/orang</strong> yaa.</li>
         <li><strong>Anak-anak? Gratis dong! Santuy... GRATIS TIS TIS!</strong></li>
-        <li>Yang nggak bisa hadir tetep support dengan ikut iuran yaa.<br>
-          Nanti kaos Reuni bakal dikirim ke rumah kamu. Ongkir ditanggung sendiri 😅</li>
-        <li>Pas Hari-H, wajib pake kaos reuni yang kece badai.<br>
-          Biar fotonya makin kece, Instagrammable dan kompak abis! 📸🔥</li>
+        <li>Yang nggak bisa hadir tetep support dengan ikut iuran yaa. Nanti kaos Reuni bakal dikirim ke rumah kamu. Ongkir ditanggung sendiri 😅</li>
+        <li>Pas Hari-H, wajib pake kaos reuni yang kece badai. Biar fotonya makin kece, Instagrammable dan kompak abis! 📸🔥</li>
       </ul>
     </div>
 
@@ -170,10 +168,9 @@
 
     <div class="section">
       <h3>📍 LOKASI ACARA – NGUMPUL DI SINI NIH!</h3>
-      <p>Kita bakal kumpul seru-seruan di tempat hits nan asri:</p>
-      <p>Gak usah bingung cari tempatnya, ini lokasi kita reuni bareng:<br>
-      <strong>📌 Desa Wisata Trayu</strong><br>
-      🗺️ Tenang... maps-nya udah kami siapin. Klik aja peta di bawah buat langsung nyasar ke lokasi! 👇</p>
+      <p>Kita bakal kumpul seru-seruan di tempat hits nan asri:<br>Gak usah bingung cari tempatnya, ini lokasi kita reuni bareng:</p>
+      <p><strong>📌 Desa Wisata Trayu</strong></p>
+      <p>🗺️ Tenang... maps-nya udah kami siapin. Klik aja peta di bawah buat langsung nyasar ke lokasi! 👇</p>
       <div class="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.4701774140354!2d110.2546783!3d-7.0652119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7063168981816f%3A0xdbfd986a48d47801!2sDesa%20Wisata%20Trayu!5e0!3m2!1sen!2sid!4v1748793468953!5m2!1sen!2sid" allowfullscreen loading="lazy"></iframe>
       </div>
@@ -214,18 +211,27 @@
     // Countdown
     const countdown = document.getElementById('countdown');
     const eventDate = new Date('2025-07-06T08:00:00+07:00').getTime();
-    setInterval(() => {
+    const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = eventDate - now;
+
       if (distance < 0) {
-        countdown.innerHTML = "🎉 Yesss! Acara udah mulai!";
+        countdown.innerHTML = "🎊 Waktunya REUNI! 🎊";
+        confetti({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.6 }
+        });
+        clearInterval(interval);
         return;
       }
+
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdown.innerHTML = `⏳ Countdown ke acara: ${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+
+      countdown.innerHTML = `⏳ ${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
     }, 1000);
 
     // Progress bar
